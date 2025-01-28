@@ -1,32 +1,28 @@
-list = [3,1,2,3,2,1]
+array = [1,2,1,3,2,1]
 
+def is_mountain_array(arr):
+    # Check 1 - Array must be greater than 3
+    if len(arr) < 3:
+        return False
 
-def is_mountain_array(list):
-    check_list = list.copy()
-    check_list.pop(0)
+    i = 0
+    n = len(arr)
 
-    for index, num in enumerate(check_list):
-        num1 = list[index]
-        num2 = num
+    # Check 2 - Numbers must continuously rise until the peak
+    while i + 1 < n and arr[i] < arr[i + 1]:
+        i += 1
+        print(i)
 
-        if num1 < num2:
-            print("up")
+    
+    # Check 3 - Peak cannot be at the start or end
+    if i == 0 or i == n - 1:
+        return False
 
-        elif num1 == num2:
-            print("same")
+    # Check 4 - Numbers must continuously fall from the peak
+    while i + 1 < n and arr[i] > arr[i + 1]:
+        i += 1
+        print(i)
 
-        elif num1 > num2:
-            print("down")
+    return i == n - 1
 
-        print(f"Num1: {num1}")
-        print(f"Num2: {num2}")
-        print()
-        
-
-#print(list)
-is_mountain_array(list)
-
-"""if len(array) >= 3:
-    print(True)
-else:
-    print(False)"""
+print(is_mountain_array(array))
