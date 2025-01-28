@@ -13,7 +13,6 @@ def is_mountain_array(arr):
         i += 1
         print(i)
 
-    
     # Check 3 - Peak cannot be at the start or end
     if i == 0 or i == n - 1:
         return False
