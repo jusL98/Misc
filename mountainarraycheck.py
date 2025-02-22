@@ -1,4 +1,4 @@
-array = [1,2,3,2,1]
+array = [1,2,1,3,2,1]
 
 def is_mountain_array(arr):
     # Check 1 - Array must be greater than 3
